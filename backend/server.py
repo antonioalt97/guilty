@@ -184,7 +184,7 @@ async def discord_login():
         f"response_type=code&"
         f"scope=identify%20email"
     )
-    return {"url": discord_auth_url}
+    return RedirectResponse(url=discord_auth_url)
 
 
 @api_router.get("/auth/discord/callback")
