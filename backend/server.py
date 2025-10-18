@@ -294,7 +294,7 @@ async def google_login():
         f"response_type=code&"
         f"scope=openid%20email%20profile"
     )
-    return {"url": google_auth_url}
+    return RedirectResponse(url=google_auth_url)
 
 
 @api_router.get("/auth/google/callback")
